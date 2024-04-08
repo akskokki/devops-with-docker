@@ -1,5 +1,6 @@
+```
 $ docker run -d devopsdockeruh/simple-web-service:ubuntu
 $ docker exec -it 46 bash
 $ tail -f ./text.log
 Secret message is: 'You can find the source code here: https://github.com/docker-hy'
-
+```
