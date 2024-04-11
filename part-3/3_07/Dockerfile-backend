@@ -1,5 +1,4 @@
-# golang 1.16 recommended in README
-FROM golang:1.16
+FROM golang:alpine3.19
 
 EXPOSE 8080
 
@@ -10,7 +9,7 @@ COPY . .
 ENV REQUEST_ORIGIN=http://localhost:5000
 
 RUN go build && \ 
-    useradd -m appuser && \
+    adduser -D appuser && \
     chown appuser . && \
     rm -rf /go && \
     rm -rf /usr/local/go

@@ -1,5 +1,5 @@
 # Node version 16 recommended in the README
-FROM node:16
+FROM node:16-alpine3.16
 
 EXPOSE 5000
 
@@ -12,7 +12,7 @@ ENV REACT_APP_BACKEND_URL=http://localhost:8080
 RUN npm install && \
     npm install -g serve && \
     npm run build && \
-    useradd -m appuser && \
+    adduser -D appuser && \
     chown appuser . && \
     rm -rf node_modules
 
